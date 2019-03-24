@@ -2,13 +2,12 @@ import React from 'react'
 import AppRoutes from '../../routes';
 import PlainNav from '../../../lib/pages/components/layout/modules/menu/plain/index';
 const TemplateOne = (props) => {
-  const { redirect, redirectPath } = props
   return (
     <div>
       <header>
-        <PlainNav />
+        <PlainNav {...props} />
       </header>
-      <AppRoutes redirect={redirect} redirectPath={redirectPath} />
+      <AppRoutes {...props} />
       <footer>
         <h1>footer</h1>
       </footer>

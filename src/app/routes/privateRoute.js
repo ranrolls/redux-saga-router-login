@@ -1,10 +1,9 @@
 import React from 'react'
 import { Route, Redirect } from "react-router-dom";
-const PrivateRoute = ({ component: Component, ...rest }) => {
-    let isAuth = false;
+const PrivateRoute = ({ component: Component, user: user, ...rest }) => {
     return (
         <Route {...rest} render={(props) => (
-            isAuth === true
+            user.isLoggedIn === true
                 ? <Component {...props} />
                 : <Redirect to={{
                     pathname: '/index/login',

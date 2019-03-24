@@ -32,18 +32,18 @@ class App extends React.Component {
     }
   }
   render() {
-    const { redirect, redirectPath } = this.props;
     return (
       <Router>
-        <TemplateOne redirect={redirect} redirectPath={redirectPath} />
+        <TemplateOne {...this.props} />
       </Router>
     )
   }
 }
 function mapStateToProps(state) {
   const { redirect, redirectPath } = state.core;
+  const { user } = state;
   return {
-    redirect, redirectPath
+    redirect, redirectPath, user
   }
 }
 export default withRouter(connect(mapStateToProps)(App))

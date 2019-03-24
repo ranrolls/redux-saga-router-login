@@ -23,8 +23,8 @@ const AppRoutes = (props) => {
       <Route exact path="/index" component={Index} />
       <Route exact path="/index/ca" component={CancelAsync} />
       <Route exact path="/index/ac" component={AsyncCounter} />
-      <Route exact path="/index/login" component={Login} />
-      <PrivateRoute path='/indexp' component={P} />
+      <Route exact path="/index/login" component={Login} {...props} />
+      <PrivateRoute path='/indexp' component={P} {...props} />
       <Route path="/index/:pageUrl" component={DynamicContent} />
     </Switch>
   )
